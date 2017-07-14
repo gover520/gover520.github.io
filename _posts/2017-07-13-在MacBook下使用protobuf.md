@@ -22,25 +22,33 @@ protobuf是和json相似的结构化数据存储格式 json是字符串 而proto
 https://github.com/gover520/protobuf
 
 ### 下载protobuf
+<pre><code>
 $ git clone https://github.com/google/protobuf.git 
+</code></pre>
 
 ### 安装automake & libtool
+<pre><code>
 $ brew install automake  
 $ brew install libtool
+</code></pre>
 
 ### 运行autogen.sh
+<pre><code>
 $ ./autogen.sh
+</code></pre>
 
 ### 安装protobuf
+<pre><code>
 $ ./configure  
 $ make check  
 $ make  
 $ make install 
-
+</code></pre>
 
 ## 生成 xxx.proto 文件
 -----
 ### proto 文件
+<pre><code>
 package ly; 
 message helloworld 
 { 
@@ -48,12 +56,15 @@ message helloworld
 	required string    str = 2;  // str 
 	optional int32     opt = 3;  //optional field 
 }
+</code></pre>
 
 ### 编译 .proto 文件
 写好 proto 文件之后就可以用 Protobuf 编译器将该文件编译成目标语言了。本例中我们将使用 C++。
 假设您的 proto 文件存放在 $SRC_DIR 下面，您也想把生成的文件放在同一个目录下，则可以使用如下命令：
 
+<pre><code>
 protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/addressbook.proto
+</code></pre>
 
 命令将生成两个文件：
 lm.helloworld.pb.h 定义了 C++ 类的头文件
