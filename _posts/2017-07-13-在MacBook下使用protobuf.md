@@ -1,3 +1,4 @@
+
 ---
 layout: post
 title: 在MacBook下使用protobuf
@@ -59,15 +60,18 @@ message helloworld
 </code></pre>
 
 ### 编译 .proto 文件
-写好 proto 文件之后就可以用 Protobuf 编译器将该文件编译成目标语言了。本例中我们将使用 C++。
-假设您的 proto 文件存放在 $SRC_DIR 下面，您也想把生成的文件放在同一个目录下，则可以使用如下命令：
+写好 proto 文件之后就可以用 Protobuf编译器将该文件编译成目标语言了 本例中我们将使用 C++
+
+假设您的 proto 文件存放在 $SRC_DIR 下面，您也想把生成的文件放在同一个目录下 则可以使用如下命令:
 
 <pre><code>
 protoc -I=$SRC_DIR --cpp_out=$DST_DIR $SRC_DIR/addressbook.proto
 </code></pre>
 
 命令将生成两个文件：
+
 lm.helloworld.pb.h 定义了 C++ 类的头文件
+
 lm.helloworld.pb.cc C++ 类的实现文件
 
 ## 使用proto
